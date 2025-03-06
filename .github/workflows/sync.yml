@@ -1,0 +1,28 @@
+name: Sync WeRead Notes
+
+on:
+  schedule:
+    - cron: '0 20 * * *'  # 每天UTC时间20:00（北京时间凌晨4点）
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 设置Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 执行同步
+        run: python sync.py
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          WEREAD_COOKIE: ${{ secrets.WEREAD_COOKIE }}
