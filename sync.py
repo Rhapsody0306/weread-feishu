@@ -31,8 +31,8 @@ if __name__ == "__main__":
     feishu = FeishuTool()
     for book in notes:
         feishu.add_to_table(
-            app_token="你的多维表格App Token",  # 在飞书表格URL中查找
-            table_id="你的表格ID",
+            app_token="IzKJb10ZCagiqCs8y36cMVhpnTg",  # 在飞书表格URL中查找
+            table_id="tblu5gT5IGIIayqc&view=vewXQ3qzbq",
             data={
                 "书名": book.get("title"),
                 "作者": book.get("author"),
