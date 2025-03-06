@@ -37,6 +37,5 @@ if __name__ == "__main__":
                 "书名": book.get("title"),
                 "作者": book.get("author"),
                 "进度": book.get("progress"),
-                "笔记": "\n".join([highlight.get("markText") for highlight in book.get("highlights")])
             }
         )
