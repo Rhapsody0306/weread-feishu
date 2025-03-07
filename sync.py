@@ -21,7 +21,7 @@ class FeishuTool:
         return res.json().get("tenant_access_token")
     
     def add_to_table(self, app_token, table_id, data):
-        url =  url = f"https://open.feishu.cn/open-apis/bitable/v1/apps/{app_token}/tables/{table_id}/records"
+        url =  url = f"https://open.feishu.cn/open-apis/bitable/v1/apps/IzKJb10ZCagiqCs8y36cMVhpnTg/tables/tblu5gT5IGIIayqc&view=vewXQ3qzbq/records"
 
         headers = {"Authorization": f"Bearer {self.token}"}
         requests.post(url, headers=headers, json={"fields": data})
